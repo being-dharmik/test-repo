@@ -162,11 +162,3 @@ To view custom step details like Input, Output or Exeption, select Step in the *
 #### Github repository
 
 https://github.com/teamklap/sls-node-rush-salad-analysis
-
-##### Lambda function 
-
-* Until [list-cameras](./rush/SVC-164-list-cameras.md) step, all the steps are taking an-s3 like single-record event as output and are outputting an s3-like single-record event.
-
-* [list-cameras](./rush/SVC-164-list-cameras.md) step, is taking an s3-like one-record event as input and has an s3-like multi-record event as ourtput
-
-* [tracks-to-trajectories](./rush/SVC-166-tracks-to-trajectories) step, is taking an s3-like multi-record event as input. Trajectory files should be stored in 1st camera rush. See details [here](./rush/SVC-166-tracks-to-trajectories)
