@@ -7,7 +7,7 @@ Track the horses and horseriders in the equidia's 30s rush for coursedereference
 
 ### horse and horseriders tracking state machine steps description
 
-<img src = 'https://g.gravizo.com/svg? @startuml; (*) --> if "Some AC" then; -->[true] "activity 1"; if "" then; -> "activity 3" as a3; else; if "Other test" then; -left-> "activity 5"; else; --> "activity 6"; endif; endif; else; ->[false] "activity 2"; endif; a3 --> if "last test" then; --> "activity 7"; --> (*); else; -> "activity 8"; endif; @enduml' />
+<img src = 'https://g.gravizo.com/svg? @startuml; (*) --> "set-fps"; --> "set-segments"; --> "set-meta-regexps"; --> ===B1===; --> "meta"; --> ===B2===; ===B1=== --> "segments"; --> "frames"; --> ===B2===; --> "extract-passfirst"; --> "set-cam-motion-conf"; --> "set-prediction"; --> "set-prediction-lambda"; --> "prediction"; --> "set-multiview-tracking"; --> "set-pitch-conf"; --> "extract-cam-motion"; --> "detections-to-multiview-tracks"; --> "bbox-tracks-from-multiview-tracks"; --> (*); @enduml' />
 
 * [set-fps](./rush/SVC-164-set-fps.md) - Extend input with information on frames configuration.
 
@@ -25,6 +25,7 @@ basic
 
 * [set-cam-motion-conf](./rush/SVC-167-set-cam-conf.md) : Configure the cam-motion camera
 Exporting the tracks to client-friendly format of bounding boxes called 'bboxTracks'
+
 * set-prediction : Set basic configuration for prediction process
 
 * [set-prediction-lambda](./rush/SVC-167-set-cam-conf.md) : Configure wich lambda to use for prediction
